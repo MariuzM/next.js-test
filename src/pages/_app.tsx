@@ -17,11 +17,11 @@ export const DefaultLayout: React.FC = ({ children }) => {
   )
 }
 
-const App = ({ Component, pageProps }: any) => {
+const App = ({ Component, pageProps, router }: any) => {
   return (
     <DefaultLayout>
       <AnimatePresence exitBeforeEnter>
-        <Component {...pageProps}></Component>
+        <Component {...pageProps} key={router.route}></Component>
       </AnimatePresence>
     </DefaultLayout>
   )

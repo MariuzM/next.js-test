@@ -2,7 +2,12 @@ import { motion } from 'framer-motion'
 
 const PageTransitions: React.FC = ({ children }) => {
   return (
-    <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 2 }}>
+    <motion.div
+      exit={{ opacity: 0 }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1 }}
+    >
       {children}
     </motion.div>
   )
