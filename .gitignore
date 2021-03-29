@@ -1,0 +1,8 @@
+*.cache
+
+.DS_Store
+.env.local
+.next
+
+node_modules
+
