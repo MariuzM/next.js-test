@@ -1,13 +1,14 @@
+import { AnimatePresence } from 'framer-motion'
 import Link from 'next/link'
 
 export const DefaultLayout: React.FC = ({ children }) => {
   return (
     <>
-      <Link href="/">
+      <Link href='/'>
         <a>Home</a>
       </Link>
 
-      <Link href="/photos">
+      <Link href='/photos'>
         <a>Photos</a>
       </Link>
 
@@ -19,7 +20,9 @@ export const DefaultLayout: React.FC = ({ children }) => {
 const App = ({ Component, pageProps }: any) => {
   return (
     <DefaultLayout>
-      <Component {...pageProps}></Component>
+      <AnimatePresence exitBeforeEnter>
+        <Component {...pageProps}></Component>
+      </AnimatePresence>
     </DefaultLayout>
   )
 }
